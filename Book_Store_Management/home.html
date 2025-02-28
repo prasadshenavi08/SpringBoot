@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymleaf.com">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .navbar {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .container h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        animation: fadeIn 2s;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .book-card {
+        transition: transform 0.3s ease-in-out;
+    }
+    .book-card:hover {
+        transform: scale(1.05);
+    }
+    .card-img-top {
+        width: 150px;
+        height: 200px;
+        object-fit: cover;
+        margin: auto;
+    }
+</style>
+<title>Prasad’s Book Haven</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Prasad’s Book Haven</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="available_book">Available Books</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="my_books">My Books</a></li>
+                </ul>
+                <a class="nav-link text-white" href="book_register">New Book Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center my-5">
+        <h1>Welcome to Prasad’s Book Haven</h1>
+        <img src="/images/images.jpeg" width="360px" class="img-fluid rounded shadow">
+    </div>
+
+    <div class="container">
+        <h2 class="text-center mb-4">Featured Books</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="/images/book1.jpg" class="card-img-top" alt="Book 1">
+                    <div class="card-body">
+                        <h5 class="card-title">The Alchemist</h5>
+                        <p class="card-text">by Paulo Coelho</p>
+                        <p class="fw-bold">₹399</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="/images/book2.jpg" class="card-img-top" alt="Book 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Atomic Habits</h5>
+                        <p class="card-text">by James Clear</p>
+                        <p class="fw-bold">₹499</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="/images/book3.jpg" class="card-img-top" alt="Book 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Rich Dad Poor Dad</h5>
+                        <p class="card-text">by Robert Kiyosaki</p>
+                        <p class="fw-bold">₹299</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="/images/book4.jpg" class="card-img-top" alt="Book 4">
+                    <div class="card-body">
+                        <h5 class="card-title">The 5 AM Club</h5>
+                        <p class="card-text">by Robin Sharma</p>
+                        <p class="fw-bold">₹350</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container text-center mt-5 py-3">
+        <h6>Created By Prasad Prakash Shenavi</h6>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
