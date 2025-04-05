@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Students and Exams</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+            transition: 0.3s ease-in-out;
+        }
+
+        td ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        td ul li {
+            background: #e3f2fd;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📜 Student List with Exams</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Exams</th>
+        </tr>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td>
+                <ul>
+                    <li th:each="exam : ${student.exams}">
+                        <strong th:text="${exam.examName}"></strong> <br>
+                        Date: <span th:text="${exam.examDate}"></span> <br>
+                        Time: <span th:text="${exam.examTime}"></span> <br>
+                        Day: <span th:text="${exam.examDay}"></span> <br>
+                        Duration: <span th:text="${exam.examDuration} + ' mins'"></span> <br>
+                        Total Marks: <span th:text="${exam.totalMarks}"></span>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
