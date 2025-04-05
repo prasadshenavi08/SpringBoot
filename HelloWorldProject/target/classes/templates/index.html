@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold">My Project</a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="index.html" class="text-white hover:text-gray-300">Home</a></li>
+                <li><a href="about.html" class="text-white hover:text-gray-300">About</a></li>
+                <li><a href="gallery.html" class="text-white hover:text-gray-300">Gallery</a></li>
+                <li><a href="contact.html" class="text-white hover:text-gray-300">Contact</a></li>
+                <li><a href="other.html" class="text-white hover:text-gray-300">Feedback</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white text-2xl">&#9776;</button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-700 p-4">
+            <a href="index" class="block text-white py-2">Home</a>
+            <a href="about" class="block text-white py-2">About</a>
+            <a href="gallery.html" class="block text-white py-2">Gallery</a>
+            <a href="contact.html" class="block text-white py-2">Contact</a>
+            <a href="other.html" class="block text-white py-2">Feedback</a>
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>
