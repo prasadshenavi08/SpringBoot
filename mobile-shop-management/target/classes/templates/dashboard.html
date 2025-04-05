@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <h2>User Dashboard</h2>
+    <p>Welcome, <span th:text="${username}"></span>!</p>
+    
+    <h3>Available Mobiles</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="mobile : ${mobiles}">
+            <td th:text="${mobile.id}"></td>
+            <td th:text="${mobile.model}"></td>
+            <td th:text="${mobile.price}"></td>
+            <td>
+                <a th:href="@{/user/order/{id}(id=${mobile.id})}">Buy Now</a>
+            </td>
+        </tr>
+    </table>
+
+    <a href="/logout">Logout</a>
+</body>
+</html>
